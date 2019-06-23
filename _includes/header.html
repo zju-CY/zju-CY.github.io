@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {% if page.title %}
+      {{ page.title | escape }}
+      {% else %}
+      {{ site.title | escape }}
+      {% endif %}
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/assets/res/favicon.ico">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/c06133726c.js"></script>
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
+    {% for css in layout.css %}
+    {% if css contains "//" %}
+    <link rel="stylesheet" href="{{css}}">
+    {% else %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
+    {% endif %}
+    {% endfor %}
+    {% for css in page.css %}
+    {% if css contains "//" %}
+    <link rel="stylesheet" href="{{css}}">
+    {% else %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
+    {% endif %}
+    {% endfor %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{site.baseurl}}/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{site.baseurl}}/sitemap.xml">
+    {% seo title=false %}
+  </head>
+  <body>
+    <header>
+      <nav class="top-nav teal">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="{{site.baseurl}}/">{{site.title}}</a>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="{{site.github_url}}" target="_blank"><img class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.png"></a>
+            <a class="waves-effect" href="mailto:{{ site.email }}" style="color:#fffef9;"><i class="fas fa-envelope fa-2x"></i></a>
+            <a class="waves-effect" ></a>
+            <a class="waves-effect" href="{{site.github_url}}" style="color:#fffef9;" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="{{site.baseurl}}/"><i class="material-icons">home</i>主页</a></li>
+        <li><a class="waves-effect" href="{{site.baseurl}}/categories"><i class="material-icons">sort</i>分类</a></li>
+        <li><a class="waves-effect" href="{{site.baseurl}}/tags"><i class="material-icons">label</i>标签</a></li>
+        <li><a class="waves-effect" href="{{site.baseurl}}/projects"><i class="material-icons">description</i>项目</a></li>
+        <li><div class="divider"></div></li>
+        {% for cat in site.categories %}
+          <li><a class="waves-effect" href="{{site.baseurl}}/categories#{{cat[0] | slugify}}{% if test == testup %}_cap{% endif %}">{{cat[0]}}（{{cat[1].size}}）</a></li>
+        {% endfor %}
+        <li><div class="divider"></div></li>
+        <h4></h4>
+        {% for tag in site.tags %}
+        {% capture test %}{{tag[0] | slice: 0}}{% endcapture %}
+        {% capture testup %}{{tag[0] | slice: 0 | upcase}}{% endcapture %}
+          <a class="tag-chip" href="{{site.baseurl}}/tags/#{{tag[0] | slugify}}{% if test == testup %}_cap{% endif %}"><div class="chip z-depth-1">{{tag[0]}}（{{tag[1].size}}）</div></a>
+        {% endfor %}
+      </ul>
+    </header>
+    <main>
