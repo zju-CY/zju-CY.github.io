@@ -4,7 +4,7 @@ title: vim插件
 category: 工具
 tags: vim
 typora-root-url: ../../../zju-cy.github.io
-excerpt: 图解vim。
+excerpt: vim几个有用的插件配置
 ---
 
 [Vundle](http://github.com/VundleVim/Vundle.vim)
