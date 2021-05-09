@@ -33,3 +33,15 @@ excerpt: 软件收藏。
 - [Darling](https://www.darlinghq.org/)
 
   Darling 的意思是 Darwin + Linux。它是一个转换层，允许在 Linux 直接运行 macOS 的二进制文件。
+
+
+
+-   [cdecl](https://cdecl.org)
+
+    C 语言声明转为英文，有 online 和命令行工具。
+
+
+
+-   [tldr](https://tldr.sh)
+
+    以示例的方式展示命令的用法，简化版的 man page。
