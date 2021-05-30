@@ -45,3 +45,15 @@ excerpt: 软件收藏。
 -   [tldr](https://tldr.sh)
 
     以示例的方式展示命令的用法，简化版的 man page。
+
+
+
+-   [instantbox](https://github.com/instantbox/instantbox)
+
+    可以直接从浏览器访问的 linux 系统沙箱，docker-compose 技术。
+
+
+
+-   [ttyd](https://github.com/tsl0922/ttyd)
+
+    可以直接从浏览器访问的 terminal，挺有意思的。
