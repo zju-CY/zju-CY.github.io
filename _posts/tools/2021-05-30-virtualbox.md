@@ -3,6 +3,7 @@ layout: post
 title: VirtualBox
 category: 工具
 tags: vagrant virtualbox
+typora-root-url: ../../../zju-cy.github.io
 excerpt: 虚拟机
 ---
 
@@ -59,7 +60,7 @@ VirtualBox 扩容也比较简单方便，在最开始新建虚拟机的时候，
 -   Dynamic，可以直接在 virtualbox 界面上进行扩容
 -   Fixed，要先 copy 成 Dynamic，在 Dynamic 模式下扩容后，再 copy 成 Fixed，这时会有两个 Fixed vdi，配置虚拟机使用新生成的 vdi，删除旧的 vdi 就行了
 
-<img src="../../images/virtualbox-vdi-copy.png" alt="virtualbox-vdi-copy" style="zoom:50%;" />
+<img src="/images/virtualbox-vdi-copy.png" style="zoom:50%;" />
 
 
 
